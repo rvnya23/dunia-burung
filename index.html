@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengenal Burung Lebih Dekat 🐦 | AR Edukasi</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐦</text></svg>">
+</head>
+<body class="home-page">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="bird-loader">
+                <span class="bird-emoji">🐦</span>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+            </div>
+            <p class="loading-text">Mempersiapkan petualangan...</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🐦</span>
+                <span class="logo-text">Bird<span class="logo-highlight">AR</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">
+                        <span class="nav-icon">🏠</span> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="birds.html" class="nav-link">
+                        <span class="nav-icon">📚</span> Burung
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="ar-camera.html" class="nav-link nav-link-special">
+                        <span class="nav-icon">📷</span> AR Camera
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="quiz.html" class="nav-link">
+                        <span class="nav-icon">🎯</span> Quiz
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="progress.html" class="nav-link">
+                        <span class="nav-icon">⭐</span> Progress
+                    </a>
+                </li>
+            </ul>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <main class="hero-section">
+        <div class="clouds-container">
+            <div class="cloud cloud-1"><span>☁️</span></div>
+            <div class="cloud cloud-2"><span>☁️</span></div>
+            <div class="cloud cloud-3"><span>☁️</span></div>
+            <div class="cloud cloud-4"><span>☁️</span></div>
+            <div class="cloud cloud-5"><span>⛅</span></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="welcome-badge">
+                    <span class="badge-star">🌟</span> Selamat Datang, Penjelajah Cilik!
+                </div>
+                <h1 class="hero-title">
+                    Mengenal Burung
+                    <span class="title-highlight">Lebih Dekat</span>
+                </h1>
+                <p class="hero-description">
+                    Yuk, kenali berbagai jenis burung seru dengan teknologi <strong>Augmented Reality</strong>! 
+                    Lihat burung terbang di depan matamu, dengar suaranya, dan jadilah ahli burung cilik! 🦜✨
+                </p>
+                <div class="hero-buttons">
+                    <a href="birds.html" class="btn btn-primary btn-large">
+                        <span>🚀</span> Mulai Belajar
+                        <span class="btn-sparkle">✨</span>
+                    </a>
+                    <a href="ar-camera.html" class="btn btn-accent btn-large">
+                        <span>📷</span> Coba AR Sekarang
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Jenis Burung</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number">AR</span>
+                        <span class="stat-label">3D Interaktif</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number">🎯</span>
+                        <span class="stat-label">Quiz Seru</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-illustration">
+                    <div class="illustration-scene">
+                        <div class="scene-sky"></div>
+                        <div class="scene-tree">🌳</div>
+                        <div class="scene-birds">
+                            <span class="scene-bird bird-pos-1">🦜</span>
+                            <span class="scene-bird bird-pos-2">🐦</span>
+                            <span class="scene-bird bird-pos-3">🕊️</span>
+                        </div>
+                        <div class="scene-kid">🧒</div>
+                        <div class="scene-ground">
+                            <span>🌿🌱🌸🌿🌱🌸🌿</span>
+                        </div>
+                        <div class="scene-ar-effect">
+                            <div class="ar-scan-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll ke bawah</span>
+            <span class="scroll-arrow">⬇️</span>
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="section-header">
+            <h2 class="section-title">🌈 Apa yang Bisa Kamu Lakukan?</h2>
+            <p class="section-subtitle">Pilih petualangan seru di bawah ini!</p>
+        </div>
+        
+        <div class="features-grid">
+            <a href="birds.html" class="feature-card card-learn">
+                <div class="card-icon-wrapper">
+                    <span class="card-icon">📚</span>
+                </div>
+                <h3 class="card-title">Kenali Burung</h3>
+                <p class="card-desc">Pelajari 3 jenis burung unik lengkap dengan fakta seru dan suara asli!</p>
+                <span class="card-action">Lihat Semua →</span>
+            </a>
+
+            <a href="ar-camera.html" class="feature-card card-ar">
+                <div class="card-icon-wrapper">
+                    <span class="card-icon">📷</span>
+                    <div class="card-badge">NEW!</div>
+                </div>
+                <h3 class="card-title">AR Camera</h3>
+                <p class="card-desc">Arahkan kamera ke marker dan lihat burung 3D muncul di dunia nyata!</p>
+                <span class="card-action">Coba AR →</span>
+            </a>
+
+            <a href="quiz.html" class="feature-card card-quiz">
+                <div class="card-icon-wrapper">
+                    <span class="card-icon">🎯</span>
+                </div>
+                <h3 class="card-title">Quiz Seru</h3>
+                <p class="card-desc">Uji pengetahuanmu tentang burung dengan pertanyaan interaktif!</p>
+                <span class="card-action">Mulai Quiz →</span>
+            </a>
+
+            <a href="progress.html" class="feature-card card-progress">
+                <div class="card-icon-wrapper">
+                    <span class="card-icon">⭐</span>
+                </div>
+                <h3 class="card-title">Lihat Progress</h3>
+                <p class="card-desc">Pantau pencapaian belajarmu dan kumpulkan badge keren!</p>
+                <span class="card-action">Cek Progress →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="section-header">
+            <h2 class="section-title">🎮 Cara Mainnya Gampang!</h2>
+        </div>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-icon">📚</div>
+                <h4>Pelajari</h4>
+                <p>Baca info burung dan download marker AR</p>
+            </div>
+            <div class="step-connector">→</div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-icon">📷</div>
+                <h4>Scan AR</h4>
+                <p>Arahkan kamera ke marker yang sudah dicetak</p>
+            </div>
+            <div class="step-connector">→</div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-icon">🎯</div>
+                <h4>Quiz</h4>
+                <p>Jawab pertanyaan dan dapatkan skor tertinggi</p>
+            </div>
+            <div class="step-connector">→</div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-icon">🏆</div>
+                <h4>Dapatkan Badge</h4>
+                <p>Kumpulkan pencapaian dan jadi ahli burung!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Siap Menjelajah Dunia Burung? 🦅</h2>
+            <p>Mulai petualangan AR-mu sekarang dan temukan burung-burung keren!</p>
+            <a href="ar-camera.html" class="btn btn-primary btn-large">
+                📷 Mulai AR Camera
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">🐦 BirdAR</span>
+                    <p>Website edukasi burung interaktif untuk anak Indonesia</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="birds.html">Burung</a>
+                    <a href="ar-camera.html">AR Camera</a>
+                    <a href="quiz.html">Quiz</a>
+                    <a href="progress.html">Progress</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>🌈 Dibuat dengan ❤️ untuk pendidikan anak Indonesia</p>
+                <p class="footer-copy">© 2024 BirdAR - Mengenal Burung Lebih Dekat</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+        <span>⬆️</span>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

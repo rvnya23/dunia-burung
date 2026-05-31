@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Burung 📚 | BirdAR</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="birds-page">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <span class="bird-emoji">🦜</span>
+            <p class="loading-text">Menyiapkan burung-burung...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🐦</span>
+                <span class="logo-text">Bird<span class="logo-highlight">AR</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon">🏠</span> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="birds.html" class="nav-link active">
+                        <span class="nav-icon">📚</span> Burung
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="ar-camera.html" class="nav-link nav-link-special">
+                        <span class="nav-icon">📷</span> AR Camera
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="quiz.html" class="nav-link">
+                        <span class="nav-icon">🎯</span> Quiz
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="progress.html" class="nav-link">
+                        <span class="nav-icon">⭐</span> Progress
+                    </a>
+                </li>
+            </ul>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="birds-main">
+        <div class="page-header birds-header">
+            <div class="header-decoration">
+                <span class="deco-bird">🐦</span>
+                <span class="deco-bird">🦜</span>
+                <span class="deco-bird">🐤</span>
+            </div>
+            <h1>🐦 Kenali Burung-Burung Keren!</h1>
+            <p>Klik kartu burung untuk melihat info lengkap, dengar suaranya, dan download marker AR-nya! 📥</p>
+        </div>
+
+        <!-- Bird Cards Grid -->
+        <div class="birds-grid" id="birdsGrid">
+            <!-- Card 1: Beo -->
+            <article class="bird-card" data-bird-id="1">
+                <div class="bird-card-header">
+                    <div class="bird-avatar-container">
+                        <span class="bird-avatar">🦜</span>
+                        <div class="bird-habitat-badge">🌴 Hutan Tropis</div>
+                    </div>
+                </div>
+                <div class="bird-card-body">
+                    <h3 class="bird-name">Burung Beo</h3>
+                    <p class="bird-latin"><em>Gracula religiosa</em></p>
+                    <p class="bird-short-desc">Burung super pintar yang bisa menirukan suara manusia! 🗣️</p>
+                    <div class="bird-quick-info">
+                        <span class="quick-info-item">
+                            <span class="qi-icon">📏</span> Sayap: 30-35 cm
+                        </span>
+                        <span class="quick-info-item">
+                            <span class="qi-icon">🦅</span> Terbang: 500-1000m
+                        </span>
+                    </div>
+                    <button class="btn btn-primary btn-small btn-detail" data-bird="beo">
+                        🔍 Lihat Detail Lengkap
+                    </button>
+                </div>
+            </article>
+
+            <!-- Card 2: Toucan -->
+            <article class="bird-card" data-bird-id="2">
+                <div class="bird-card-header">
+                    <div class="bird-avatar-container">
+                        <span class="bird-avatar">🦜</span>
+                        <div class="bird-habitat-badge">🌧️ Hutan Hujan</div>
+                    </div>
+                </div>
+                <div class="bird-card-body">
+                    <h3 class="bird-name">Burung Toucan</h3>
+                    <p class="bird-latin"><em>Ramphastos toco</em></p>
+                    <p class="bird-short-desc">Burung eksotis dengan paruh besar berwarna cerah! 🌈</p>
+                    <div class="bird-quick-info">
+                        <span class="quick-info-item">
+                            <span class="qi-icon">📏</span> Sayap: 40-50 cm
+                        </span>
+                        <span class="quick-info-item">
+                            <span class="qi-icon">🦅</span> Terbang: 1000-2000m
+                        </span>
+                    </div>
+                    <button class="btn btn-primary btn-small btn-detail" data-bird="toucan">
+                        🔍 Lihat Detail Lengkap
+                    </button>
+                </div>
+            </article>
+
+            <!-- Card 3: Kingfisher -->
+            <article class="bird-card" data-bird-id="3">
+                <div class="bird-card-header">
+                    <div class="bird-avatar-container">
+                        <span class="bird-avatar">🐦</span>
+                        <div class="bird-habitat-badge">🏞️ Dekat Sungai</div>
+                    </div>
+                </div>
+                <div class="bird-card-body">
+                    <h3 class="bird-name">Burung Kingfisher</h3>
+                    <p class="bird-latin"><em>Alcedo atthis</em></p>
+                    <p class="bird-short-desc">Burung kecil biru cerah yang jago memancing ikan! 🎣</p>
+                    <div class="bird-quick-info">
+                        <span class="quick-info-item">
+                            <span class="qi-icon">📏</span> Sayap: 25-30 cm
+                        </span>
+                        <span class="quick-info-item">
+                            <span class="qi-icon">🦅</span> Terbang: 100-500m
+                        </span>
+                    </div>
+                    <button class="btn btn-primary btn-small btn-detail" data-bird="kingfisher">
+                        🔍 Lihat Detail Lengkap
+                    </button>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Modal Detail Burung -->
+    <div class="modal-overlay" id="birdModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="closeModal" aria-label="Tutup">✕</button>
+            
+            <div class="modal-header">
+                <div class="modal-bird-display" id="modalBirdDisplay">
+                    <span class="modal-bird-emoji" id="modalBirdEmoji">🦜</span>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <h2 class="modal-bird-name" id="modalBirdName">Burung Beo</h2>
+                <p class="modal-bird-latin" id="modalBirdLatin"><em>Gracula religiosa</em></p>
+                
+                <div class="modal-stats-grid">
+                    <div class="modal-stat">
+                        <span class="stat-icon-large">📏</span>
+                        <div class="stat-info">
+                            <span class="stat-label">Ukuran Sayap</span>
+                            <span class="stat-value" id="modalWingSpan">30-35 cm</span>
+                        </div>
+                    </div>
+                    <div class="modal-stat">
+                        <span class="stat-icon-large">🦅</span>
+                        <div class="stat-info">
+                            <span class="stat-label">Ketinggian Terbang</span>
+                            <span class="stat-value" id="modalFlightHeight">500-1000 m</span>
+                        </div>
+                    </div>
+                    <div class="modal-stat">
+                        <span class="stat-icon-large">🌍</span>
+                        <div class="stat-info">
+                            <span class="stat-label">Habitat</span>
+                            <span class="stat-value" id="modalHabitat">Hutan Tropis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-description">
+                    <h4>📖 Deskripsi</h4>
+                    <p id="modalDescription">Burung Beo adalah burung yang sangat cerdas dan terkenal karena kemampuannya menirukan suara manusia.</p>
+                </div>
+                
+                <div class="modal-funfact">
+                    <div class="funfact-header">
+                        <span class="funfact-icon">💡</span>
+                        <h4>Fakta Unik!</h4>
+                    </div>
+                    <p id="modalFunFact">Beo bisa belajar hingga 100 kata berbeda!</p>
+                </div>
+                
+                <div class="modal-audio-section">
+                    <h4>🔊 Suara Burung</h4>
+                    <button class="btn btn-outline btn-sound" id="playSoundBtn">
+                        <span class="sound-icon">🔊</span> Dengar Suara Asli
+                    </button>
+                    <audio id="birdAudio" preload="none"></audio>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="downloadMarkerBtn">
+                    📥 Download Marker AR
+                </button>
+                <a href="ar-camera.html" class="btn btn-accent">
+                    📷 Buka AR Camera
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>🌈 Dibuat dengan ❤️ untuk pendidikan anak Indonesia | © 2024 BirdAR</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/bird-data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

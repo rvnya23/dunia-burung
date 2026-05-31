@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Belajar ⭐ | BirdAR</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="progress-page">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <span class="bird-emoji">⭐</span>
+            <p class="loading-text">Memuat pencapaianmu...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🐦</span>
+                <span class="logo-text">Bird<span class="logo-highlight">AR</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon">🏠</span> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="birds.html" class="nav-link">
+                        <span class="nav-icon">📚</span> Burung
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="ar-camera.html" class="nav-link nav-link-special">
+                        <span class="nav-icon">📷</span> AR Camera
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="quiz.html" class="nav-link">
+                        <span class="nav-icon">🎯</span> Quiz
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="progress.html" class="nav-link active">
+                        <span class="nav-icon">⭐</span> Progress
+                    </a>
+                </li>
+            </ul>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="progress-main">
+        <div class="page-header progress-header">
+            <div class="header-decoration">
+                <span class="deco-star">⭐</span>
+                <span class="deco-star">🌟</span>
+                <span class="deco-star">✨</span>
+            </div>
+            <h1>⭐ Progress Belajarmu</h1>
+            <p>Lihat sejauh mana kamu sudah menjelajahi dunia burung! 🐦</p>
+        </div>
+
+        <!-- Overall Progress Circle -->
+        <section class="progress-overview">
+            <div class="progress-circle-wrapper">
+                <div class="progress-circle-container">
+                    <svg viewBox="0 0 160 160" class="progress-svg">
+                        <defs>
+                            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#FFE66D;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#4ECDC4;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="80" cy="80" r="70" class="progress-circle-bg"></circle>
+                        <circle cx="80" cy="80" r="70" class="progress-circle-fill" id="mainProgressCircle"
+                            stroke="url(#progressGradient)"></circle>
+                    </svg>
+                    <div class="progress-circle-center">
+                        <span class="progress-percentage" id="overallPercentage">0%</span>
+                        <span class="progress-subtitle">Keseluruhan</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stats-cards-grid">
+                <div class="stat-card stat-learned">
+                    <div class="stat-card-icon-wrapper">
+                        <span>📚</span>
+                    </div>
+                    <span class="stat-card-value" id="learnedCount">0</span>
+                    <span class="stat-card-label">Burung Dipelajari</span>
+                    <span class="stat-card-sub">dari 3 burung</span>
+                </div>
+                <div class="stat-card stat-scanned">
+                    <div class="stat-card-icon-wrapper">
+                        <span>📷</span>
+                    </div>
+                    <span class="stat-card-value" id="scannedCount">0</span>
+                    <span class="stat-card-label">AR Scan Berhasil</span>
+                    <span class="stat-card-sub">dari 3 marker</span>
+                </div>
+                <div class="stat-card stat-quiz">
+                    <div class="stat-card-icon-wrapper">
+                        <span>🎯</span>
+                    </div>
+                    <span class="stat-card-value" id="quizHighScore">0</span>
+                    <span class="stat-card-label">Skor Quiz Terbaik</span>
+                    <span class="stat-card-sub">dari 100 poin</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checklist Section -->
+        <section class="checklist-section">
+            <h2 class="section-subtitle">
+                <span class="subtitle-icon">✅</span> Daftar Burung
+            </h2>
+            <div class="checklist-container" id="checklistContainer">
+                <!-- Diisi oleh JavaScript -->
+            </div>
+        </section>
+
+        <!-- Badges Section -->
+        <section class="badges-section">
+            <h2 class="section-subtitle">
+                <span class="subtitle-icon">🏅</span> Pencapaian & Badge
+            </h2>
+            <div class="badges-grid" id="badgesGrid">
+                <!-- Diisi oleh JavaScript -->
+            </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="activity-section">
+            <h2 class="section-subtitle">
+                <span class="subtitle-icon">📋</span> Aktivitas Terakhir
+            </h2>
+            <div class="activity-list" id="activityList">
+                <div class="activity-item empty">
+                    <span class="activity-icon">📝</span>
+                    <p>Belum ada aktivitas. Mulai belajar sekarang!</p>
+                    <a href="birds.html" class="btn btn-primary btn-small">🚀 Mulai Belajar</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reset Section -->
+        <section class="reset-section">
+            <p class="reset-hint">Ingin memulai dari awal?</p>
+            <button class="btn btn-outline btn-small btn-reset" id="resetProgressBtn">
+                🔄 Reset Semua Progress
+            </button>
+        </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>🌈 Dibuat dengan ❤️ untuk pendidikan anak Indonesia | © 2024 BirdAR</p>
+        </div>
+    </footer>
+
+    <!-- PENTING: Tambahkan main.js untuk fungsi hamburger menu -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/bird-data.js"></script>
+    <script src="assets/js/progress.js"></script>
+</body>
+</html>

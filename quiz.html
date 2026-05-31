@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Burung 🎯 | BirdAR</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="quiz-page">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <span class="bird-emoji">🤔</span>
+            <p class="loading-text">Menyiapkan quiz seru...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🐦</span>
+                <span class="logo-text">Bird<span class="logo-highlight">AR</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon">🏠</span> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="birds.html" class="nav-link">
+                        <span class="nav-icon">📚</span> Burung
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="ar-camera.html" class="nav-link nav-link-special">
+                        <span class="nav-icon">📷</span> AR Camera
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="quiz.html" class="nav-link active">
+                        <span class="nav-icon">🎯</span> Quiz
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="progress.html" class="nav-link">
+                        <span class="nav-icon">⭐</span> Progress
+                    </a>
+                </li>
+            </ul>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Quiz Main Content -->
+    <main class="quiz-main">
+        <!-- START SCREEN -->
+        <div class="quiz-screen quiz-screen-start active" id="quizStartScreen">
+            <div class="quiz-decoration">
+                <div class="deco-circle deco-1"></div>
+                <div class="deco-circle deco-2"></div>
+                <span class="deco-bird deco-b1">🦜</span>
+                <span class="deco-bird deco-b2">🦅</span>
+                <span class="deco-bird deco-b3">🐦</span>
+            </div>
+            <div class="quiz-start-content">
+                <span class="quiz-emoji-large">🎯</span>
+                <h1>Quiz Burung</h1>
+                <p class="quiz-subtitle">Seberapa kenal kamu dengan dunia burung? 🐦</p>
+                <div class="quiz-info-cards">
+                    <div class="info-card">
+                        <span class="info-card-icon">📝</span>
+                        <span class="info-card-num">5</span>
+                        <span class="info-card-label">Pertanyaan</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-card-icon">⭐</span>
+                        <span class="info-card-num">100</span>
+                        <span class="info-card-label">Skor Maksimal</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-card-icon">🏆</span>
+                        <span class="info-card-num">Badge</span>
+                        <span class="info-card-label">Menantimu!</span>
+                    </div>
+                </div>
+                <div class="quiz-topics">
+                    <h4>Topik Pertanyaan:</h4>
+                    <div class="topic-tags">
+                        <span class="topic-tag">🐦 Nama Burung</span>
+                        <span class="topic-tag">📖 Nama Latin</span>
+                        <span class="topic-tag">🌍 Habitat</span>
+                        <span class="topic-tag">💡 Fakta Unik</span>
+                        <span class="topic-tag">🦅 Ciri Khas</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-large btn-start-quiz" id="startQuizBtn">
+                    🚀 Mulai Quiz Sekarang!
+                </button>
+            </div>
+        </div>
+
+        <!-- ACTIVE QUIZ SCREEN -->
+        <div class="quiz-screen quiz-screen-active" id="quizActiveScreen">
+            <div class="quiz-progress-header">
+                <div class="quiz-progress-bar-wrapper">
+                    <div class="quiz-progress-bar">
+                        <div class="quiz-progress-fill" id="quizProgressFill"></div>
+                    </div>
+                    <div class="quiz-progress-info">
+                        <span class="progress-question" id="questionCounter">Pertanyaan 1/5</span>
+                        <span class="progress-score">Skor: <strong id="currentScore">0</strong></span>
+                    </div>
+                </div>
+            </div>
+            <div class="quiz-question-area">
+                <div class="question-emoji-display" id="questionEmoji">🐦</div>
+                <h2 class="question-text" id="questionText">Pertanyaan akan muncul di sini</h2>
+                <div class="options-grid" id="optionsGrid">
+                    <!-- Opsi akan diisi oleh JavaScript -->
+                </div>
+                <div class="feedback-area" id="feedbackArea"></div>
+            </div>
+            <div class="quiz-nav">
+                <button class="btn btn-outline btn-small" id="skipBtn" disabled>
+                    ⏭️ Lewati
+                </button>
+                <span class="quiz-timer" id="quizTimer">⏱️ -</span>
+            </div>
+        </div>
+
+        <!-- RESULT SCREEN -->
+        <div class="quiz-screen quiz-screen-result" id="quizResultScreen">
+            <div class="result-container">
+                <div class="result-emoji-display" id="resultEmojiDisplay">🎉</div>
+                <h1 class="result-title" id="resultTitle">Quiz Selesai!</h1>
+                <div class="result-score-circle-wrapper">
+                    <div class="result-score-circle">
+                        <svg viewBox="0 0 140 140" class="result-circle-svg">
+                            <circle cx="70" cy="70" r="62" class="result-circle-bg"></circle>
+                            <circle cx="70" cy="70" r="62" class="result-circle-fill" id="resultCircleFill"></circle>
+                        </svg>
+                        <div class="result-score-text">
+                            <span class="result-score-number" id="finalScore">0</span>
+                            <span class="result-score-unit">/100</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="result-message" id="resultMessage">Bagus sekali!</p>
+                <div class="result-details" id="resultDetails">
+                    <div class="result-detail-item">
+                        <span>✅ Benar</span>
+                        <span id="correctCount">0</span>
+                    </div>
+                    <div class="result-detail-item">
+                        <span>❌ Salah</span>
+                        <span id="wrongCount">0</span>
+                    </div>
+                    <div class="result-detail-item">
+                        <span>⏱️ Waktu</span>
+                        <span id="totalTime">0 detik</span>
+                    </div>
+                </div>
+                <div class="result-badge-display" id="resultBadgeDisplay"></div>
+                <div class="result-actions">
+                    <button class="btn btn-primary btn-large" id="retryQuizBtn">
+                        🔄 Coba Lagi
+                    </button>
+                    <a href="birds.html" class="btn btn-outline">
+                        📚 Belajar Lagi
+                    </a>
+                    <a href="progress.html" class="btn btn-outline">
+                        ⭐ Lihat Progress
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>🌈 Dibuat dengan ❤️ untuk pendidikan anak Indonesia | © 2024 BirdAR</p>
+        </div>
+    </footer>
+
+    <!-- PENTING: Tambahkan main.js untuk fungsi hamburger menu -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/bird-data.js"></script>
+    <script src="assets/js/quiz.js"></script>
+</body>
+</html>

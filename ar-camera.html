@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<style>
+    /* Pastikan halaman AR fullscreen tanpa mengganggu A-Frame */
+    html.ar-page,
+    body.ar-page {
+        width: 100% !important;
+        height: 100% !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        background: #000 !important;
+    }
+    
+    .ar-scene-wrapper {
+        width: 100% !important;
+        height: 100% !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        z-index: 1 !important;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>AR Camera 📷 | BirdAR</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- A-Frame Library -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <!-- AR.js Library -->
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.2/aframe/build/aframe-ar.js"></script>
+<body class="ar-page">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <span class="bird-emoji">📷</span>
+            <p class="loading-text">Mengaktifkan kamera AR...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="loading-hint">Pastikan kamu mengizinkan akses kamera ya! 📸</p>
+        </div>
+    </div>
+
+    <!-- AR Scene Container -->
+    <div class="ar-scene-wrapper" id="arSceneWrapper">
+        <a-scene 
+                embedded
+                arjs="sourceType: webcam; 
+                    debugUIEnabled: false; 
+                    detectionMode: mono;
+                    trackingMethod: best;"
+                vr-mode-ui="enabled: false"
+                device-orientation-permission-ui="enabled: false"
+                id="arScene"
+            >
+            <!-- Marker untuk Burung Beo -->
+            <a-marker 
+                preset="custom" 
+                type="pattern" 
+                url="assets/markers/pattern-beo.patt"
+                id="markerBeo"
+                emitevents="true"
+                smooth="true"
+                smoothCount="5"
+                smoothTolerance="0.01"
+            >
+                <a-entity 
+                    gltf-model="url(assets/models/beo.glb)"
+                    scale="0.6 0.6 0.6" 
+                    position="0 0.15 0"
+                    rotation="0 0 0"
+                    animation="property: rotation; 
+                               to: 0 360 0; 
+                               loop: true; 
+                               dur: 12000; 
+                               easing: linear;"
+                    animation__float="property: position; 
+                                      to: 0 0.25 0; 
+                                      dir: alternate; 
+                                      loop: true; 
+                                      dur: 2000; 
+                                      easing: easeInOutSine;"
+                    id="modelBeo"
+                    class="ar-model"
+                    data-bird="beo"
+                ></a-entity>
+            </a-marker>
+
+            <!-- Marker untuk Burung Toucan -->
+            <a-marker 
+                preset="custom" 
+                type="pattern" 
+                url="assets/markers/pattern-toucan.patt"
+                id="markerToucan"
+                emitevents="true"
+                smooth="true"
+                smoothCount="5"
+                smoothTolerance="0.01"
+            >
+                <a-entity 
+                    gltf-model="url(assets/models/toucan.glb)"
+                    scale="0.6 0.6 0.6" 
+                    position="0 0.15 0"
+                    rotation="0 0 0"
+                    animation="property: rotation; 
+                               to: 0 360 0; 
+                               loop: true; 
+                               dur: 12000; 
+                               easing: linear;"
+                    animation__float="property: position; 
+                                      to: 0 0.25 0; 
+                                      dir: alternate; 
+                                      loop: true; 
+                                      dur: 2000; 
+                                      easing: easeInOutSine;"
+                    id="modelToucan"
+                    class="ar-model"
+                    data-bird="toucan"
+                ></a-entity>
+            </a-marker>
+
+            <!-- Marker untuk Burung Kingfisher -->
+            <a-marker 
+                preset="custom" 
+                type="pattern" 
+                url="assets/markers/pattern-kingfisher.patt"
+                id="markerKingfisher"
+                emitevents="true"
+                smooth="true"
+                smoothCount="5"
+                smoothTolerance="0.01"
+            >
+                <a-entity 
+                    gltf-model="url(assets/models/kingfisher.glb)"
+                    scale="0.6 0.6 0.6" 
+                    position="0 0.15 0"
+                    rotation="0 0 0"
+                    animation="property: rotation; 
+                               to: 0 360 0; 
+                               loop: true; 
+                               dur: 12000; 
+                               easing: linear;"
+                    animation__float="property: position; 
+                                      to: 0 0.25 0; 
+                                      dir: alternate; 
+                                      loop: true; 
+                                      dur: 2000; 
+                                      easing: easeInOutSine;"
+                    id="modelKingfisher"
+                    class="ar-model"
+                    data-bird="kingfisher"
+                ></a-entity>
+            </a-marker>
+
+            <!-- Camera Entity -->
+            <a-entity camera id="arCamera"></a-entity>
+        </a-scene>
+    </div>
+
+    <!-- AR UI Overlay -->
+    <div class="ar-ui-overlay" id="arUIOverlay">
+        <!-- Top Bar -->
+        <div class="ar-top-bar">
+            <a href="birds.html" class="ar-back-btn" aria-label="Kembali">
+                <span>←</span> Kembali
+            </a>
+            <div class="ar-title">
+                <span class="ar-title-icon">📷</span>
+                <span>AR Camera</span>
+            </div>
+            <div></div>
+        </div>
+
+        <!-- Center Indicator -->
+        <div class="ar-center-indicator" id="arIndicator">
+            <div class="indicator-ring">
+                <div class="indicator-pulse"></div>
+                <div class="indicator-inner">🎯</div>
+            </div>
+            <p class="indicator-text">Arahkan kamera ke <strong>marker</strong> burung</p>
+            <p class="indicator-subtext">Download marker dari halaman burung ya! 📥</p>
+        </div>
+
+        <!-- Info Popup -->
+        <div class="ar-info-popup" id="arInfoPopup">
+            <button class="popup-toggle-btn" id="popupToggleBtn">
+                <span class="popup-toggle-icon">ℹ️</span>
+                <span class="popup-toggle-text">Info Burung</span>
+                <span class="popup-toggle-arrow">▼</span>
+            </button>
+            <div class="popup-content-wrapper" id="popupContentWrapper">
+                <div class="popup-inner-content">
+                    <h3 class="popup-bird-name" id="popupBirdName">-</h3>
+                    <p class="popup-bird-latin" id="popupBirdLatin">-</p>
+                    <div class="popup-info-grid">
+                        <div class="popup-info-item">
+                            <span class="pii-icon">📏</span>
+                            <span>Sayap: <strong id="popupWingSpan">-</strong></span>
+                        </div>
+                        <div class="popup-info-item">
+                            <span class="pii-icon">🦅</span>
+                            <span>Terbang: <strong id="popupFlightHeight">-</strong></span>
+                        </div>
+                        <div class="popup-info-item">
+                            <span class="pii-icon">🌍</span>
+                            <span>Habitat: <strong id="popupHabitat">-</strong></span>
+                        </div>
+                    </div>
+                    <div class="popup-funfact">
+                        <span class="funfact-bulb">💡</span>
+                        <p id="popupFunFact">-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Side Control Buttons -->
+        <div class="ar-side-controls">
+            <button class="ar-ctrl-btn" id="muteBtn" aria-label="Mute/Unmute suara" title="Suara">
+                <span class="ctrl-icon">🔊</span>
+            </button>
+            <button class="ar-ctrl-btn" id="markerGuideBtn" aria-label="Lihat marker" title="Lihat Marker">
+                <span class="ctrl-icon">🏷️</span>
+            </button>
+            <button class="ar-ctrl-btn" id="screenshotBtn" aria-label="Screenshot" title="Screenshot">
+                <span class="ctrl-icon">📸</span>
+            </button>
+        </div>
+
+        <!-- Marker Detected Indicator -->
+        <div class="ar-detected-badge" id="arDetectedBadge">
+            <span class="detected-dot"></span>
+            <span class="detected-text">Burung Terdeteksi! 🎉</span>
+        </div>
+    </div>
+
+    <!-- Marker Guide Modal -->
+    <div class="ar-modal-overlay" id="markerGuideModal">
+        <div class="ar-modal-content">
+            <button class="ar-modal-close" id="closeMarkerGuide">✕</button>
+            <h3>📋 Marker AR untuk Scan</h3>
+            <p class="ar-modal-desc">Gunakan gambar di bawah ini sebagai marker. Bisa dicetak atau ditampilkan di layar lain.</p>
+            <div class="marker-grid">
+                <div class="marker-item">
+                    <img src="assets/markers/pattern-beo.png" alt="Marker Beo" class="marker-img">
+                    <p class="marker-label">🦜 Marker Beo</p>
+                    <a href="assets/markers/pattern-beo.png" download class="btn btn-small btn-outline">📥 Download</a>
+                </div>
+                <div class="marker-item">
+                    <img src="assets/markers/pattern-toucan.png" alt="Marker Toucan" class="marker-img">
+                    <p class="marker-label">🦜 Marker Toucan</p>
+                    <a href="assets/markers/pattern-toucan.png" download class="btn btn-small btn-outline">📥 Download</a>
+                </div>
+                <div class="marker-item">
+                    <img src="assets/markers/pattern-kingfisher.png" alt="Marker Kingfisher" class="marker-img">
+                    <p class="marker-label">🐦 Marker Kingfisher</p>
+                    <a href="assets/markers/pattern-kingfisher.png" download class="btn btn-small btn-outline">📥 Download</a>
+                </div>
+            </div>
+            <div class="ar-modal-tips">
+                <h4>💡 Tips AR:</h4>
+                <ul>
+                    <li>Pastikan ruangan cukup terang 💡</li>
+                    <li>Pegang marker dengan stabil ✋</li>
+                    <li>Jarak ideal: 20-50 cm dari kamera 📏</li>
+                    <li>Gunakan marker yang sudah dicetak di kertas 🖨️</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Permission Request Overlay -->
+    <div class="permission-overlay" id="permissionOverlay">
+        <div class="permission-content">
+            <span class="permission-icon">📷</span>
+            <h3>Izinkan Akses Kamera</h3>
+            <p>Kami butuh akses kamera untuk menampilkan burung 3D di AR.</p>
+            <button class="btn btn-primary" id="requestPermissionBtn">
+                🔓 Izinkan Kamera
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="assets/js/bird-data.js"></script>
+    <script src="assets/js/ar-camera.js"></script>
+
+     <!-- ========== vConsole untuk Debug ========== -->
+    <script src="https://cdn.jsdelivr.net/npm/vconsole@latest/dist/vconsole.min.js"></script>
+    <script>
+        // Aktifkan vConsole
+        var vConsole = new VConsole();
+        console.log("✅ vConsole aktif! Tombol hijau akan muncul di sudut kanan bawah");
+        console.log("📱 Silakan scan marker AR sekarang!");
+        console.log("📍 Tips: Pastikan marker tercetak dengan jelas dan ruangan terang");
+    </script>
+
+</body>
+</html>
