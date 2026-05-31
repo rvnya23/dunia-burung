@@ -249,28 +249,21 @@ function initMarkerDetection() {
 // ============================================
 function startVisibilityPolling(markerList) {
     console.log('🔄 Memulai visibility polling sebagai fallback...');
-
+    
     setInterval(() => {
         markerList.forEach(({ id, birdKey }) => {
             const marker = document.getElementById(id);
-            if (!marker) return;
+            if (!marker || !marker.object3D) return;
 
-            // AR.js menyembunyikan marker element saat tidak terdeteksi
-            // dengan mengubah object3D visibility
-            const obj3D = marker.object3D;
-            if (!obj3D) return;
+            const isVisible = marker.object3D.visible;
 
-            const isVisible = obj3D.visible;
-
-            if (isVisible && currentBirdKey !== birdKey) {
-                console.log(`👁️ POLLING DETECTED: ${birdKey} visible!`);
+            if (isVisible && !isMarkerDetected) {
                 handleMarkerFound(birdKey);
-            } else if (!isVisible && currentBirdKey === birdKey) {
-                // Marker yang sedang aktif jadi tidak visible
+            } else if (!isVisible && isMarkerDetected && currentBirdKey === birdKey) {
                 handleMarkerLost();
             }
         });
-    }, 300);
+    }, 500);
 }
 
 // ============================================
