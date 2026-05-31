@@ -189,35 +189,42 @@ function initARUI() {
 // CAMERA PERMISSION
 // ============================================
 function initCameraPermission() {
-    // Hanya cek permission, JANGAN buka stream sendiri
+    const permissionOverlay = document.getElementById('permissionOverlay');
+    const requestPermissionBtn = document.getElementById('requestPermissionBtn');
+    
+    if (!permissionOverlay || !requestPermissionBtn) return;
+    
+    // Sembunyikan overlay dulu, biarkan AR.js yang handle kamera
+    hidePermissionOverlay();
+    
+    // Hanya tampilkan jika permission benar-benar denied
     if (navigator.permissions) {
         navigator.permissions.query({ name: 'camera' }).then(result => {
             if (result.state === 'denied') showPermissionOverlay();
             result.addEventListener('change', () => {
                 if (result.state === 'denied') showPermissionOverlay();
+                else hidePermissionOverlay();
             });
         }).catch(() => {});
     }
 
-    // Tombol request tetap pakai getUserMedia tapi dengan resolusi yang cocok
-    const requestPermissionBtn = document.getElementById('requestPermissionBtn');
-    if (requestPermissionBtn) {
-        requestPermissionBtn.addEventListener('click', () => {
-            navigator.mediaDevices.getUserMedia({ 
-                video: { 
-                    facingMode: 'environment',
-                    width: { ideal: 640 },   // ✅ sesuai default ARToolkit
-                    height: { ideal: 480 }
-                } 
-            })
-            .then(stream => {
-                stream.getTracks().forEach(t => t.stop());
-                hidePermissionOverlay();
-                location.reload();
-            })
-            .catch(() => showToast('⚠️ Tidak dapat mengakses kamera.'));
+    requestPermissionBtn.addEventListener('click', () => {
+        navigator.mediaDevices.getUserMedia({ 
+            video: { 
+                facingMode: 'environment',
+                width: { ideal: 640 },
+                height: { ideal: 480 }
+            } 
+        })
+        .then(stream => {
+            stream.getTracks().forEach(t => t.stop());
+            hidePermissionOverlay();
+            location.reload();
+        })
+        .catch(() => {
+            showToast('⚠️ Tidak dapat mengakses kamera. Periksa pengaturan izin.');
         });
-    }
+    });
 }
     
     requestPermissionBtn.addEventListener('click', () => {
