@@ -5,19 +5,19 @@
 const birdsData = [
     {
         id: 1,
-        name: "Burung Beo",
+        name: "Burung lovebird",
         latinName: "Gracula religiosa",
         avatar: "🦜",
         habitat: "Hutan Tropis Asia",
         wingSpan: "30-35 cm",
         flightHeight: "500-1000 meter",
         shortDesc: "Burung super pintar yang bisa menirukan suara manusia! 🗣️",
-        description: "Burung Beo adalah burung yang sangat cerdas dan terkenal di seluruh dunia karena kemampuannya yang luar biasa dalam menirukan suara manusia. Mereka memiliki bulu berwarna hitam mengkilap dengan sedikit warna kuning di bagian kepala dan leher. Beo hidup di hutan tropis Asia Selatan dan Tenggara, termasuk Indonesia. Mereka adalah hewan sosial yang hidup berkelompok dan bisa belajar banyak kata jika dilatih dengan sabar.",
-        funFact: "Beo bisa belajar hingga 100 kata berbeda dan bahkan bisa menirukan suara hewan lain serta suara benda seperti telepon berdering! 📞",
-        soundFile: "beo.mp3",
-        markerFile: "pattern-beo.png",
-        markerPattern: "pattern-beo.patt",
-        modelFile: "beo.glb",
+        description: "Burung lovebird adalah burung yang sangat cerdas dan terkenal di seluruh dunia karena kemampuannya yang luar biasa dalam menirukan suara manusia. Mereka memiliki bulu berwarna hitam mengkilap dengan sedikit warna kuning di bagian kepala dan leher. lovebird hidup di hutan tropis Asia Selatan dan Tenggara, termasuk Indonesia. Mereka adalah hewan sosial yang hidup berkelompok dan bisa belajar banyak kata jika dilatih dengan sabar.",
+        funFact: "lovebird bisa belajar hingga 100 kata berbeda dan bahkan bisa menirukan suara hewan lain serta suara benda seperti telepon berdering! 📞",
+        soundFile: "lovebird.mp3",
+        markerFile: "pattern-lovebird.png",
+        markerPattern: "pattern-lovebird.patt",
+        modelFile: "lovebird.glb",
         color: "#FF6B6B"
     },
     {
@@ -62,23 +62,23 @@ const quizData = [
         id: 1,
         question: "Burung apa yang terkenal bisa menirukan suara manusia?",
         emoji: "🗣️",
-        options: ["Burung Beo", "Burung Toucan", "Burung Kingfisher", "Burung Elang"],
+        options: ["Burung lovebird", "Burung Toucan", "Burung Kingfisher", "Burung Elang"],
         correctIndex: 0,
-        explanation: "Burung Beo memang terkenal pintar menirukan suara manusia!"
+        explanation: "Burung lovebird memang terkenal pintar menirukan suara manusia!"
     },
     {
         id: 2,
-        question: "Apa nama latin dari Burung Beo?",
+        question: "Apa nama latin dari Burung lovebird?",
         emoji: "📖",
         options: ["Ramphastos toco", "Gracula religiosa", "Alcedo atthis", "Aquila chrysaetos"],
         correctIndex: 1,
-        explanation: "Nama latin Burung Beo adalah Gracula religiosa."
+        explanation: "Nama latin Burung lovebird adalah Gracula religiosa."
     },
     {
         id: 3,
         question: "Burung mana yang memiliki paruh besar dan berwarna cerah?",
         emoji: "🦜",
-        options: ["Burung Kingfisher", "Burung Beo", "Burung Toucan", "Burung Merpati"],
+        options: ["Burung Kingfisher", "Burung lovebird", "Burung Toucan", "Burung Merpati"],
         correctIndex: 2,
         explanation: "Burung Toucan terkenal dengan paruh besarnya yang berwarna cerah!"
     },

@@ -64,19 +64,19 @@
                 device-orientation-permission-ui="enabled: false"
                 id="arScene"
             >
-            <!-- Marker untuk Burung Beo -->
+            <!-- Marker untuk Burung lovebird -->
             <a-marker 
                 preset="custom" 
                 type="pattern" 
-                url="assets/markers/pattern-beo.patt"
-                id="markerBeo"
+                url="assets/markers/pattern-lovebird.patt"
+                id="markerlovebird"
                 emitevents="true"
                 smooth="true"
                 smoothCount="5"
                 smoothTolerance="0.01"
             >
                 <a-entity 
-                    gltf-model="url(assets/models/beo.glb)"
+                    gltf-model="url(assets/models/lovebird.glb)"
                     scale="0.6 0.6 0.6" 
                     position="0 0.15 0"
                     rotation="0 0 0"
@@ -91,9 +91,9 @@
                                       loop: true; 
                                       dur: 2000; 
                                       easing: easeInOutSine;"
-                    id="modelBeo"
+                    id="modellovebird"
                     class="ar-model"
-                    data-bird="beo"
+                    data-bird="lovebird"
                 ></a-entity>
             </a-marker>
 
@@ -253,9 +253,9 @@
             <p class="ar-modal-desc">Gunakan gambar di bawah ini sebagai marker. Bisa dicetak atau ditampilkan di layar lain.</p>
             <div class="marker-grid">
                 <div class="marker-item">
-                    <img src="assets/markers/pattern-beo.png" alt="Marker Beo" class="marker-img">
-                    <p class="marker-label">🦜 Marker Beo</p>
-                    <a href="assets/markers/pattern-beo.png" download class="btn btn-small btn-outline">📥 Download</a>
+                    <img src="assets/markers/pattern-lovebird.png" alt="Marker lovebird" class="marker-img">
+                    <p class="marker-label">🦜 Marker lovebird</p>
+                    <a href="assets/markers/pattern-lovebird.png" download class="btn btn-small btn-outline">📥 Download</a>
                 </div>
                 <div class="marker-item">
                     <img src="assets/markers/pattern-toucan.png" alt="Marker Toucan" class="marker-img">
