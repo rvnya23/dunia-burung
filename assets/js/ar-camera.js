@@ -239,7 +239,7 @@ function initCameraPermission() {
                 });
         }
     });
-}
+
 
 function showPermissionOverlay() {
     const overlay = document.getElementById('permissionOverlay');
