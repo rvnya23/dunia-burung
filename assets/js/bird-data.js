@@ -1,19 +1,19 @@
 // ============================================
-// DATA BURUNG LENGKAP
+// DATA BURUNG LENGKAP (v2 - ditambah Dodo & Merpati Putih)
 // ============================================
 
 const birdsData = [
     {
         id: 1,
-        name: "Burung lovebird",
-        latinName: "Gracula religiosa",
+        name: "Burung Lovebird",
+        latinName: "Agapornis roseicollis",
         avatar: "🦜",
-        habitat: "Hutan Tropis Asia",
-        wingSpan: "30-35 cm",
-        flightHeight: "500-1000 meter",
-        shortDesc: "Burung super pintar yang bisa menirukan suara manusia! 🗣️",
-        description: "Burung lovebird adalah burung yang sangat cerdas dan terkenal di seluruh dunia karena kemampuannya yang luar biasa dalam menirukan suara manusia. Mereka memiliki bulu berwarna hitam mengkilap dengan sedikit warna kuning di bagian kepala dan leher. lovebird hidup di hutan tropis Asia Selatan dan Tenggara, termasuk Indonesia. Mereka adalah hewan sosial yang hidup berkelompok dan bisa belajar banyak kata jika dilatih dengan sabar.",
-        funFact: "lovebird bisa belajar hingga 100 kata berbeda dan bahkan bisa menirukan suara hewan lain serta suara benda seperti telepon berdering! 📞",
+        habitat: "Padang Rumput & Semak Afrika",
+        wingSpan: "20-25 cm",
+        flightHeight: "200-500 meter",
+        shortDesc: "Burung kecil penuh kasih yang selalu berpasangan! 💕",
+        description: "Lovebird adalah burung kecil yang berasal dari Afrika dan terkenal karena ikatan kuat antar pasangannya. Mereka memiliki bulu berwarna cerah dengan kombinasi hijau, merah, kuning, dan biru yang indah. Lovebird sangat sosial dan bisa merasa kesepian jika tidak memiliki teman, itulah mengapa mereka biasanya dipelihara berpasangan. Ukuran tubuhnya kecil (sekitar 13-17 cm) tapi memiliki kepribadian yang besar dan penuh semangat.",
+        funFact: "Lovebird mendapat namanya karena pasangan lovebird sering duduk berdekatan dan saling merawat bulu satu sama lain sebagai tanda kasih sayang! 💑",
         soundFile: "lovebird.mp3",
         markerFile: "pattern-lovebird.png",
         markerPattern: "pattern-lovebird.patt",
@@ -53,34 +53,68 @@ const birdsData = [
         markerPattern: "pattern-kingfisher.patt",
         modelFile: "kingfisher.glb",
         color: "#3498DB"
+    },
+    {
+        id: 4,
+        name: "Burung Dodo",
+        latinName: "Raphus cucullatus",
+        avatar: "🐦",
+        habitat: "Pulau Mauritius (Punah)",
+        wingSpan: "Tidak bisa terbang",
+        flightHeight: "0 meter (tidak bisa terbang)",
+        shortDesc: "Burung legendaris yang sudah punah dari Pulau Mauritius! 🏝️",
+        description: "Burung Dodo adalah burung yang tidak bisa terbang dan pernah hidup di Pulau Mauritius di Samudra Hindia. Dodo memiliki tubuh besar dengan berat sekitar 10-18 kg, paruh bengkok, dan sayap kecil yang tidak berfungsi untuk terbang. Sayangnya, Dodo punah sekitar tahun 1681 akibat perburuan manusia dan predator yang dibawa ke pulau tersebut. Dodo menjadi simbol penting dalam pelajaran tentang kepunahan dan pentingnya menjaga kelestarian hewan.",
+        funFact: "Dodo tidak takut pada manusia karena di Pulau Mauritius tidak ada predator alami sebelum manusia datang. Sifat jinak inilah yang sayangnya mempercepat kepunahannya! 😢",
+        soundFile: "dodo.mp3",
+        markerFile: "pattern-dodo.png",
+        markerPattern: "pattern-dodo.patt",
+        modelFile: "dodo.glb",
+        color: "#8B7355"
+    },
+    {
+        id: 5,
+        name: "Merpati Putih",
+        latinName: "Columba livia domestica",
+        avatar: "🕊️",
+        habitat: "Seluruh Dunia (Perkotaan & Pedesaan)",
+        wingSpan: "60-70 cm",
+        flightHeight: "1000-2000 meter",
+        shortDesc: "Simbol perdamaian dunia yang bisa navigasi ribuan kilometer! ✌️",
+        description: "Merpati Putih adalah salah satu burung yang paling dikenal di seluruh dunia dan menjadi simbol perdamaian, cinta, dan kemurnian dalam banyak budaya. Merpati memiliki kemampuan navigasi yang luar biasa dan dapat menemukan jalan pulang dari jarak ratusan kilometer. Di masa lalu, merpati digunakan sebagai pengantar pesan (merpati pos) karena kemampuan navigasi mereka. Merpati putih sering dilepaskan dalam upacara pernikahan dan perayaan perdamaian.",
+        funFact: "Merpati pos pernah digunakan dalam Perang Dunia I dan II untuk mengirim pesan rahasia melintasi garis musuh. Seekor merpati bernama Cher Ami berhasil menyelamatkan 194 prajurit Amerika! 🎖️",
+        soundFile: "merpati-putih.mp3",
+        markerFile: "pattern-merpati-p.png",
+        markerPattern: "pattern-merpati-p.patt",
+        modelFile: "merpati-putih.glb",
+        color: "#F0F0F0"
     }
 ];
 
-// Data Quiz
+// Data Quiz (diperluas dengan dodo & merpati putih)
 const quizData = [
     {
         id: 1,
-        question: "Burung apa yang terkenal bisa menirukan suara manusia?",
-        emoji: "🗣️",
-        options: ["Burung lovebird", "Burung Toucan", "Burung Kingfisher", "Burung Elang"],
+        question: "Burung apa yang terkenal selalu hidup berpasangan dan penuh kasih sayang?",
+        emoji: "💕",
+        options: ["Burung Lovebird", "Burung Toucan", "Burung Kingfisher", "Burung Dodo"],
         correctIndex: 0,
-        explanation: "Burung lovebird memang terkenal pintar menirukan suara manusia!"
+        explanation: "Lovebird mendapat namanya karena selalu berpasangan dan saling merawat satu sama lain!"
     },
     {
         id: 2,
-        question: "Apa nama latin dari Burung lovebird?",
+        question: "Apa nama latin dari Burung Lovebird?",
         emoji: "📖",
-        options: ["Ramphastos toco", "Gracula religiosa", "Alcedo atthis", "Aquila chrysaetos"],
+        options: ["Ramphastos toco", "Agapornis roseicollis", "Alcedo atthis", "Raphus cucullatus"],
         correctIndex: 1,
-        explanation: "Nama latin Burung lovebird adalah Gracula religiosa."
+        explanation: "Nama latin Burung Lovebird adalah Agapornis roseicollis."
     },
     {
         id: 3,
         question: "Burung mana yang memiliki paruh besar dan berwarna cerah?",
         emoji: "🦜",
-        options: ["Burung Kingfisher", "Burung lovebird", "Burung Toucan", "Burung Merpati"],
+        options: ["Burung Kingfisher", "Burung Lovebird", "Burung Toucan", "Merpati Putih"],
         correctIndex: 2,
-        explanation: "Burung Toucan terkenal dengan paruh besarnya yang berwarna cerah!"
+        explanation: "Burung Toucan terkenal dengan paruh besarnya yang berwarna cerah dan bisa tumbuh hingga 20 cm!"
     },
     {
         id: 4,
@@ -92,10 +126,34 @@ const quizData = [
     },
     {
         id: 5,
-        question: "Apa keistimewaan utama Burung Kingfisher?",
-        emoji: "🎣",
-        options: ["Bisa bicara seperti manusia", "Paruhnya sangat besar", "Pandai menangkap ikan di air", "Bisa terbang sangat tinggi"],
+        question: "Burung Dodo berasal dari pulau mana?",
+        emoji: "🏝️",
+        options: ["Pulau Bali", "Pulau Kalimantan", "Pulau Mauritius", "Pulau Jawa"],
         correctIndex: 2,
-        explanation: "Kingfisher adalah pemancing ulung yang bisa menukik ke air untuk menangkap ikan!"
+        explanation: "Burung Dodo hidup di Pulau Mauritius di Samudra Hindia sebelum punah sekitar tahun 1681!"
+    },
+    {
+        id: 6,
+        question: "Apa keistimewaan utama Merpati Putih?",
+        emoji: "✌️",
+        options: ["Bisa berbicara seperti manusia", "Navigasi dan menemukan jalan pulang dari jauh", "Paruhnya sangat besar", "Pandai menangkap ikan"],
+        correctIndex: 1,
+        explanation: "Merpati memiliki kemampuan navigasi luar biasa, bahkan pernah digunakan sebagai pengantar pesan di zaman perang!"
+    },
+    {
+        id: 7,
+        question: "Mengapa Burung Dodo menjadi punah?",
+        emoji: "😢",
+        options: ["Terlalu banyak makan", "Perburuan manusia dan predator baru", "Tidak bisa berenang", "Cuaca yang terlalu panas"],
+        correctIndex: 1,
+        explanation: "Dodo punah karena perburuan manusia dan predator seperti tikus dan kucing yang dibawa ke Pulau Mauritius."
+    },
+    {
+        id: 8,
+        question: "Apa simbol dari Merpati Putih?",
+        emoji: "🕊️",
+        options: ["Perang dan kekuatan", "Perdamaian dan kemurnian", "Kecepatan dan kebebasan", "Kecerdasan dan misteri"],
+        correctIndex: 1,
+        explanation: "Merpati Putih adalah simbol perdamaian, cinta, dan kemurnian dalam banyak budaya di seluruh dunia!"
     }
 ];

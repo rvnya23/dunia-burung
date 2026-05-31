@@ -265,9 +265,11 @@ function initMarkerDetection() {
     console.log("📡 Memulai inisialisasi marker detection...");
     
     const markers = [
-        { id: 'markerlovebird', birdKey: 'lovebird' },
-        { id: 'markerToucan', birdKey: 'toucan' },
-        { id: 'markerKingfisher', birdKey: 'kingfisher' }
+        { id: 'markerlovebird',     birdKey: 'lovebird' },
+        { id: 'markerToucan',       birdKey: 'toucan' },
+        { id: 'markerKingfisher',   birdKey: 'kingfisher' },
+        { id: 'markerDodo',         birdKey: 'dodo' },
+        { id: 'markerMerpatiPutih', birdKey: 'merpati' }
     ];
     
     markers.forEach(({ id, birdKey }) => {
