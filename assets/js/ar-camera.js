@@ -1,3 +1,4 @@
+ar-camera.js
 // ============================================
 // AR-CAMERA.JS - Fungsi Kamera AR Lengkap
 // ============================================
@@ -269,7 +270,8 @@ function initMarkerDetection() {
         { id: 'markerToucan',       birdKey: 'toucan' },
         { id: 'markerKingfisher',   birdKey: 'kingfisher' },
         { id: 'markerDodo',         birdKey: 'dodo' },
-        { id: 'markerMerpatiPutih', birdKey: 'merpati' }
+        { id: 'markerMerpatiPutih', birdKey: 'merpati' },
+        { id: 'markerRobin', birdKey: 'robin' },
     ];
     
     markers.forEach(({ id, birdKey }) => {

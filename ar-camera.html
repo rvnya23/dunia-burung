@@ -190,7 +190,7 @@
                 ></a-entity>
             </a-marker>
  
-            <!-- ===== Marker untuk burung Merpati Putih (BARU) ===== -->
+            <!-- ===== Marker untuk burung Merpati Putih ===== -->
             <a-marker
                 preset="custom"
                 type="pattern"
@@ -209,6 +209,30 @@
                     id="modelMerpatiPutih"
                     class="ar-model"
                     data-bird="merpati"
+                ></a-entity>
+            </a-marker>
+
+            <!-- ===== Marker untuk Burung Robin (BARU) ===== -->
+            <a-marker
+                preset="custom"
+                type="pattern"
+                url="assets/markers/pattern-robin.patt"
+                id="markerRobin"
+                emitevents="true"
+                smooth="true"
+                smoothCount="10"
+                smoothTolerance="0.05"
+            >
+                <a-entity
+                    gltf-model="url(assets/models/robin.glb)"
+                    scale="0.6 0.6 0.6"
+                    position="0 0.15 0"
+                    rotation="0 0 0"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 12000; easing: linear;"
+                    animation__float="property: position; to: 0 0.25 0; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine;"
+                    id="modelRobin"
+                    class="ar-model"
+                    data-bird="robin"
                 ></a-entity>
             </a-marker>
 
@@ -325,6 +349,11 @@
                     <img src="assets/markers/pattern-merpati-p.png" alt="Marker Merpati Putih" class="marker-img">
                     <p class="marker-label">🕊️ Marker Merpati Putih</p>
                     <a href="assets/markers/pattern-merpati-p.png" download class="btn btn-small btn-outline">📥 Download</a>
+                </div>
+                <div class="marker-item">
+                    <img src="assets/markers/pattern-robin.png" alt="Marker Robin" class="marker-img">
+                    <p class="marker-label">🐦 Marker Robin</p>
+                    <a href="assets/markers/pattern-robin.png" download class="btn btn-small btn-outline">📥 Download</a>
                 </div>
             </div>
             <div class="ar-modal-tips">

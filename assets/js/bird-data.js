@@ -87,6 +87,23 @@ const birdsData = [
         markerPattern: "pattern-merpati-p.patt",
         modelFile: "merpati-putih.glb",
         color: "#F0F0F0"
+    },
+    {
+        id: 6,
+        name: "Burung Robin",
+        latinName: "Erithacus rubecula",
+        avatar: "🐦",
+        habitat: "Hutan, Taman & Kebun Eropa",
+        wingSpan: "20-22 cm",
+        flightHeight: "100-300 meter",
+        shortDesc: "Burung kecil berbulu merah oranye ikonik dari Eropa yang punya suara merdu! 🎵",
+        description: "Burung Robin atau European Robin adalah burung kecil yang sangat populer di Eropa, terutama di Inggris di mana ia dianggap sebagai 'burung nasional tidak resmi'. Robin mudah dikenali dari bulu dadanya yang berwarna merah oranye cerah, kontras dengan tubuhnya yang berwarna cokelat zaitun. Robin termasuk burung yang tidak takut pada manusia dan sering mengikuti tukang kebun yang sedang mencangkul tanah untuk mencari cacing. Mereka aktif sepanjang tahun dan sering bernyanyi bahkan di malam hari.",
+        funFact: "Robin jantan sangat territorial dan akan bernyanyi dengan keras untuk mempertahankan wilayahnya. Mereka bahkan bisa mengalahkan burung yang jauh lebih besar demi melindungi sarangnya! 🎤",
+        soundFile: "robin.mp3",
+        markerFile: "pattern-robin.png",
+        markerPattern: "pattern-robin.patt",
+        modelFile: "robin.glb",
+        color: "#E8651A"
     }
 ];
 
@@ -155,5 +172,21 @@ const quizData = [
         options: ["Perang dan kekuatan", "Perdamaian dan kemurnian", "Kecepatan dan kebebasan", "Kecerdasan dan misteri"],
         correctIndex: 1,
         explanation: "Merpati Putih adalah simbol perdamaian, cinta, dan kemurnian dalam banyak budaya di seluruh dunia!"
+    },
+    {
+        id: 9,
+        question: "Apa ciri khas paling menonjol dari Burung Robin?",
+        emoji: "🐦",
+        options: ["Paruh panjang berwarna kuning", "Dada berwarna merah oranye", "Ekor berwarna biru cerah", "Kepala berwarna hitam putih"],
+        correctIndex: 1,
+        explanation: "Burung Robin sangat mudah dikenali dari dadanya yang berwarna merah oranye yang mencolok!"
+    },
+    {
+        id: 10,
+        question: "Apa nama latin dari Burung Robin?",
+        emoji: "📖",
+        options: ["Erithacus rubecula", "Columba livia", "Alcedo atthis", "Turdus merula"],
+        correctIndex: 0,
+        explanation: "Nama latin Burung Robin adalah Erithacus rubecula. Kata 'rubecula' dalam bahasa Latin berarti 'sedikit merah'!"
     }
 ];
