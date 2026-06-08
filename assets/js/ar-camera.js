@@ -269,7 +269,7 @@ function initMarkerDetection() {
         { id: 'markerToucan',       birdKey: 'toucan' },
         { id: 'markerKingfisher',   birdKey: 'kingfisher' },
         { id: 'markerDodo',         birdKey: 'dodo' },
-        { id: 'markerMerpatiPutih', birdKey: 'merpati' },
+        { id: 'markerMerpatiPutih', birdKey: 'merpati-putih' },
         { id: 'markerRobin', birdKey: 'robin' },
     ];
     

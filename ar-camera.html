@@ -23,7 +23,32 @@
         left: 0 !important;
         z-index: 1 !important;
     }
+    a-scene canvas { width: 100% !important; height: 100% !important; }
+
+    /* Ikon kontrol: vertikal di kanan, di atas info burung */
+     .ar-side-controls {
+        position: fixed !important;
+        right: 12px !important;
+        bottom: 120px !important;
+        top: auto !important;
+        left: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        z-index: 100 !important;
+    }
+    .ar-ctrl-btn {
+        width: 46px !important; height: 46px !important;
+        border-radius: 50% !important; border: none !important;
+        background: rgba(255,255,255,0.92) !important;
+        display: flex !important; align-items: center !important;
+        justify-content: center !important; font-size: 20px !important;
+        cursor: pointer !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.25) !important;
+        flex-shrink: 0 !important;
+    }
 </style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -82,20 +107,11 @@
             >
                 <a-entity 
                     gltf-model="url(assets/models/lovebird.glb)"
-                    scale="0.6 0.6 0.6" 
-                    position="0 0.15 0"
-                    rotation="0 0 0"
-                    animation="property: rotation; 
-                               to: 0 360 0; 
-                               loop: true; 
-                               dur: 12000; 
-                               easing: linear;"
-                    animation__float="property: position; 
-                                      to: 0 0.25 0; 
-                                      dir: alternate; 
-                                      loop: true; 
-                                      dur: 2000; 
-                                      easing: easeInOutSine;"
+                    scale="0.43 0.43 0.43" 
+                    position="0 0.1 0"
+                    rotation="270 0 0"
+                    animation-mixer="clip: *; loop: repeat; crossFadeDuration: 0.3"
+                    animation__float="property: position; from: 0 0.1 0; to: 0 0.3 0; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine;"
                     id="modellovebird"
                     class="ar-model"
                     data-bird="lovebird"
@@ -115,20 +131,11 @@
             >
                 <a-entity 
                     gltf-model="url(assets/models/toucan.glb)"
-                    scale="0.6 0.6 0.6" 
-                    position="0 0.15 0"
-                    rotation="0 0 0"
-                    animation="property: rotation; 
-                               to: 0 360 0; 
-                               loop: true; 
-                               dur: 12000; 
-                               easing: linear;"
-                    animation__float="property: position; 
-                                      to: 0 0.25 0; 
-                                      dir: alternate; 
-                                      loop: true; 
-                                      dur: 2000; 
-                                      easing: easeInOutSine;"
+                    scale="1.15 1.15 1.15" 
+                    position="0 0.1 0"
+                    rotation="270 0 0"
+                    animation-mixer="clip: *; loop: repeat; crossFadeDuration: 0.3"
+                    animation__float="property: position; from: 0 0.1 0; to: 0 0.3 0; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine;"
                     id="modelToucan"
                     class="ar-model"
                     data-bird="toucan"
@@ -148,20 +155,11 @@
             >
                 <a-entity 
                     gltf-model="url(assets/models/kingfisher.glb)"
-                    scale="0.6 0.6 0.6" 
-                    position="0 0.15 0"
-                    rotation="0 0 0"
-                    animation="property: rotation; 
-                               to: 0 360 0; 
-                               loop: true; 
-                               dur: 12000; 
-                               easing: linear;"
-                    animation__float="property: position; 
-                                      to: 0 0.25 0; 
-                                      dir: alternate; 
-                                      loop: true; 
-                                      dur: 2000; 
-                                      easing: easeInOutSine;"
+                    scale="0.05 0.05 0.05" 
+                    position="0 0.1 0"
+                    rotation="270 0 0"
+                    animation-mixer="clip: *; loop: repeat; crossFadeDuration: 0.3"
+                    animation__float="property: position; from: 0 0.1 0; to: 0 0.3 0; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine;"
                     id="modelKingfisher"
                     class="ar-model"
                     data-bird="kingfisher"
@@ -179,11 +177,11 @@
             >
                 <a-entity
                     gltf-model="url(assets/models/dodo.glb)"
-                    scale="0.6 0.6 0.6"
-                    position="0 0.15 0"
-                    rotation="0 0 0"
-                    animation="property: rotation; to: 0 360 0; loop: true; dur: 12000; easing: linear;"
-                    animation__float="property: position; to: 0 0.25 0; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine;"
+                    scale="0.70 0.70 0.70"
+                    position="0 0.1 0"
+                    rotation="270 0 0"
+                    animation-mixer="clip: *; loop: repeat; crossFadeDuration: 0.3"
+                    animation__float="property: position; from: 0 0.1 0; to: 0 0.3 0; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine;"
                     id="modelDodo"
                     class="ar-model"
                     data-bird="dodo"
@@ -194,25 +192,25 @@
             <a-marker
                 preset="custom"
                 type="pattern"
-                url="assets/markers/pattern-merpati-p.patt"
+                url="assets/markers/pattern-merpati-putih.patt"
                 id="markerMerpatiPutih"
                 emitevents="true"
                 smooth="true" smoothCount="10" smoothTolerance="0.05"
             >
                 <a-entity
                     gltf-model="url(assets/models/merpati-putih.glb)"
-                    scale="0.6 0.6 0.6"
-                    position="0 0.15 0"
-                    rotation="0 0 0"
-                    animation="property: rotation; to: 0 360 0; loop: true; dur: 12000; easing: linear;"
-                    animation__float="property: position; to: 0 0.25 0; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine;"
+                    scale="070 0.70 0.70"
+                    position="0 0.1 0"
+                    rotation="270 0 0"
+                    animation-mixer="clip: *; loop: repeat; crossFadeDuration: 0.3"
+                    animation__float="property: position; from: 0 0.1 0; to: 0 0.3 0; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine;"
                     id="modelMerpatiPutih"
                     class="ar-model"
-                    data-bird="merpati"
+                    data-bird="merpati-putih"
                 ></a-entity>
             </a-marker>
 
-            <!-- ===== Marker untuk Burung Robin (BARU) ===== -->
+            <!-- ===== Marker untuk Burung Robin ===== -->
             <a-marker
                 preset="custom"
                 type="pattern"
@@ -225,11 +223,11 @@
             >
                 <a-entity
                     gltf-model="url(assets/models/robin.glb)"
-                    scale="0.6 0.6 0.6"
-                    position="0 0.15 0"
-                    rotation="0 0 0"
-                    animation="property: rotation; to: 0 360 0; loop: true; dur: 12000; easing: linear;"
-                    animation__float="property: position; to: 0 0.25 0; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine;"
+                    scale="0.015 0.015 0.015"
+                    position="0 0.1 0"
+                    rotation="270 0 0"
+                    animation-mixer="clip: *; loop: repeat; crossFadeDuration: 0.3"
+                    animation__float="property: position; from: 0 0.1 0; to: 0 0.3 0; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine;"
                     id="modelRobin"
                     class="ar-model"
                     data-bird="robin"
@@ -311,6 +309,12 @@
             </button>
         </div>
 
+        <div class="ar-detected-badge" id="arDetectedBadge">
+            <span class="detected-dot"></span>
+            <span class="detected-text">Burung Terdeteksi! 🎉</span>
+        </div>
+    </div>
+
         <!-- Marker Detected Indicator -->
         <div class="ar-detected-badge" id="arDetectedBadge">
             <span class="detected-dot"></span>
@@ -346,9 +350,9 @@
                     <a href="assets/markers/pattern-dodo.png" download class="btn btn-small btn-outline">📥 Download</a>
                 </div>
                 <div class="marker-item">
-                    <img src="assets/markers/pattern-merpati-p.png" alt="Marker Merpati Putih" class="marker-img">
+                    <img src="assets/markers/pattern-merpati-putih.png" alt="Marker Merpati Putih" class="marker-img">
                     <p class="marker-label">🕊️ Marker Merpati Putih</p>
-                    <a href="assets/markers/pattern-merpati-p.png" download class="btn btn-small btn-outline">📥 Download</a>
+                    <a href="assets/markers/pattern-merpati-putih.png" download class="btn btn-small btn-outline">📥 Download</a>
                 </div>
                 <div class="marker-item">
                     <img src="assets/markers/pattern-robin.png" alt="Marker Robin" class="marker-img">
